@@ -31,19 +31,19 @@ public class Db_nations_main {
             int n = 0;
             while (risultati.next()) {
 
-                System.out.println(risultati.getString("Lista_Delle_Nazioni") + ", "
-                        + risultati.getString("ID_Nazione") + ", "
-                        + risultati.getString("Nome_Regione") + ", "
+                System.out.println(risultati.getString("Lista_Delle_Nazioni") + ", ID: "
+                        + risultati.getString("ID_Nazione")  + ", Nome regione: "
+                        + risultati.getString("Nome_Regione") + ", Nome continente: "
                         + risultati.getString("Nome_Continente"));
                 found = true;
                 n++;
             }
-            System.out.println(" ");
-            System.out.println("Numero di risultati: " + n);
-
             if (!found) {
                 System.out.println("Nessun risultato trovato.");
             }
+
+            System.out.println(" ");
+            System.out.println("Numero di risultati: " + n);
             connessione.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
