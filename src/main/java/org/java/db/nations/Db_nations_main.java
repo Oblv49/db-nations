@@ -38,7 +38,9 @@ public class Db_nations_main {
                 found = true;
                 n++;
             }
+            System.out.println(" ");
             System.out.println("Numero di risultati: " + n);
+
             if (!found) {
                 System.out.println("Nessun risultato trovato.");
             }
