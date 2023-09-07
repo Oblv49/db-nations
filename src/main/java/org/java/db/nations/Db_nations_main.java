@@ -28,13 +28,17 @@ public class Db_nations_main {
 
             ResultSet risultati = statement.executeQuery();
             boolean found = false;
+            int n = 0;
             while (risultati.next()) {
+
                 System.out.println(risultati.getString("Lista_Delle_Nazioni") + ", "
                         + risultati.getString("ID_Nazione") + ", "
                         + risultati.getString("Nome_Regione") + ", "
                         + risultati.getString("Nome_Continente"));
                 found = true;
+                n++;
             }
+            System.out.println("Numero di risultati: " + n);
             if (!found) {
                 System.out.println("Nessun risultato trovato.");
             }
